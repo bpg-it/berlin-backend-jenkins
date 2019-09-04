@@ -14,7 +14,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    deploymentConfig: springboot-demo-jenkins
+    deployment-config.name: springboot-demo-jenkins
   sessionAffinity: None
   type: ClusterIP
 status:
