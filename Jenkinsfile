@@ -24,7 +24,7 @@ pipeline {
 	}
 
 	environment {
-		MY_BUILD_NAME = "springboot-demo"
+		MY_BUILD_NAME = "springboot-demo-jenkins"
 		MY_BUILD_NAME_BINARY = "${MY_BUILD_NAME}-binary"
 	}
 
@@ -70,7 +70,7 @@ pipeline {
             steps {
 				sh '''
 				rm -rf oc-build && mkdir -p oc-build/deployments
-				cp target/springboot-demo*.jar oc-build/deployments/
+				cp target/springboot-demo-jenkins*.jar oc-build/deployments/
 				oc start-build "$MY_BUILD_NAME_BINARY" --from-dir=oc-build --wait=true
 				'''
             }
@@ -79,7 +79,8 @@ pipeline {
         stage('Prepare service and route') {
             steps {
 				sh '''
-                echo "service and route"
+                oc apply -f openshift/springboot-demo-jenkins-service.yaml
+                oc apply -f openshift/springboot-demo-jenkins-route.yaml
 				'''
             }
         }

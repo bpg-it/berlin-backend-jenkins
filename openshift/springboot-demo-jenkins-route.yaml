@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    description: Route for application's http service.
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    application: springboot-demo-jenkins
+  name: springboot-demo-jenkins
+spec:
+  to:
+    kind: Service
+    name: springboot-demo-jenkins
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: null
