@@ -60,10 +60,8 @@ pipeline {
         stage('Prepare Buildconfig and Imagestream') {
             steps {
 				sh '''
-                OC_PROJECT=$(oc project -q)
-                echo ${OC_PROJECT}
 				oc new-build --binary=true --name="$MY_BUILD_NAME_BINARY" --image-stream=redhat-openjdk18-openshift --to="$MY_BUILD_NAME" || true
-				oc create dc ${MY_BUILD_NAME} --image="docker-registry.default.svc:5000/${OC_PROJECT}/${MY_BUILD_NAME}:latest" && oc set triggers dc/$MY_BUILD_NAME --from-image=${MY_BUILD_NAME}:latest -c default-container || true
+				oc create dc ${MY_BUILD_NAME} --image="${MY_BUILD_NAME}:latest" && oc set triggers dc/$MY_BUILD_NAME --from-image=${MY_BUILD_NAME}:latest -c default-container || true
 				'''
             }
         }
