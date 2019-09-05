@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.bpghub</groupId>
-	<artifactId>springboot-demo-jenkins</artifactId>
+	<artifactId>berlin-backend-jenkins</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-demo-jenkins</name>
+	<name>berlin-backend-jenkins</name>
 	<description>Demo project for Spring Boot using Jenkins</description>
 
 	<properties>

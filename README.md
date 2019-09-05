@@ -1,5 +1,5 @@
-# springboot-demo-jenkins
+# berlin-backend-jenkins
 
 ```bash
-oc new-build https://github.com/bpg-it/springboot-demo-jenkins.git
+oc new-build https://github.com/bpg-it/berlin-backend-jenkins.git
 ```
