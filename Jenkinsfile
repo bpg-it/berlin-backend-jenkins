@@ -24,7 +24,7 @@ pipeline {
 	}
 
 	environment {
-		MY_BUILD_NAME = "berlin-backend-jenkins"
+		MY_BUILD_NAME = "berlin-backend"
 		MY_BUILD_NAME_BINARY = "${MY_BUILD_NAME}-binary"
 	}
 
@@ -70,7 +70,7 @@ pipeline {
             steps {
 				sh '''
 				rm -rf oc-build && mkdir -p oc-build/deployments
-				cp target/berlin-backend-jenkins*.jar oc-build/deployments/
+				cp target/berlin-backend*.jar oc-build/deployments/
 				oc start-build "$MY_BUILD_NAME_BINARY" --from-dir=oc-build --wait=true
 				'''
             }
