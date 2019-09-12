@@ -1,4 +1,4 @@
-package de.bpghub.springbootdemo;
+package de.bpghub.cloudnativedevelopment.counter;
 
 import lombok.Data;
 

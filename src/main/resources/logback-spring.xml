@@ -46,9 +46,9 @@
         </appender>
 
         <appender name="FILE-OPENSHIFT" class="ch.qos.logback.core.rolling.RollingFileAppender">
-            <file>/berlin/logs/berlin-backend.log</file>
+            <file>/tmp/berlin-backend.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>/berlin/logs/berlin-backend.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+                <fileNamePattern>/tmp/berlin-backend.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
                 <maxHistory>10</maxHistory>
                 <totalSizeCap>5GB</totalSizeCap>
             </rollingPolicy>
